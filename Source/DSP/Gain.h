@@ -24,10 +24,11 @@ public:
 
     void updateDurationInSeconds(double duration) noexcept;
     void setGainLinear(float gain) noexcept;
+    void resetGainLinear(float gain) noexcept;
 
     void process(const juce::dsp::ProcessContextReplacing<float>& context) noexcept;
 
-    inline float isSilent() noexcept { return !isSmoothing() && gain.getCurrentValue() == 0.f; }
+    inline bool isSilent() noexcept { return !isSmoothing() && gain.getCurrentValue() == 0.f; }
     inline bool isSmoothing() noexcept { return gain.isSmoothing(); }
 
 private:

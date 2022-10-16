@@ -17,8 +17,8 @@ void SynthVoice::prepare(const juce::dsp::ProcessSpec& spec)
     sampleRate = spec.sampleRate;
     osc.prepare(spec);
     gain.prepare(spec);
-    gain.updateDurationInSeconds(0.001);
-    gain.setGainLinear(0.f);
+    gain.updateDurationInSeconds(0.002);
+    gain.resetGainLinear(0.f);
 
     voiceBuffer.setSize(spec.numChannels, spec.maximumBlockSize);
 }
@@ -40,7 +40,6 @@ void SynthVoice::stopNote(float velocity, bool allowTailOff)
 {
     gain.setGainLinear(0.f);
     noteOn = false;
-    midiNoteNumber = 0;
 }
 
 void SynthVoice::renderNextBlock(juce::AudioBuffer<float>& outputBuffer, int startSample, int numSamples)

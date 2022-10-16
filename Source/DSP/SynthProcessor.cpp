@@ -31,7 +31,6 @@ void SynthProcessor::process(juce::AudioBuffer<float>& outputAudio, const juce::
     while (it.getNextEvent(currentMessage, samplePos))
     {
         const int samplesBetweenMessages = samplePos - prevSamplePos;
-
         renderSynthVoices(outputAudio, prevSamplePos, samplesBetweenMessages);
 
         prevSamplePos = samplePos;
@@ -108,8 +107,12 @@ void SynthProcessor::noteOff(const juce::MidiMessage& midiMessage)
 int SynthProcessor::findExistingNoteIndex(const int midiNoteNumber)
 {
     for (int i = 0; i < synthVoiceArray.size(); ++i)
-        if (synthVoiceArray[i].getMidiNoteNumber() == midiNoteNumber)
-            return i;
+    {
+        auto& voice = synthVoiceArray[i];
+        if (voice.isCurrentlyPlaying())
+            if (voice.getMidiNoteNumber() == midiNoteNumber)
+                return i;
+    }
 
     return -1;
 }
@@ -164,7 +167,7 @@ void SynthProcessor::synthVoiceArrayDBG()
 {
     juce::String out = "";
 
-    for (const auto& note : synthVoiceArray)
+    for (auto& note : synthVoiceArray)
     {
         int midiNum = note.getMidiNoteNumber();
         juce::String noteName = midiNum >= 10 ? juce::String(midiNum) : juce::String(midiNum) + " ";

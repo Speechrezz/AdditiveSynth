@@ -41,6 +41,11 @@ void Gain::setGainLinear(float newGain) noexcept
     gain.setTargetValue(newGain);
 }
 
+void Gain::resetGainLinear(float newGain) noexcept
+{
+    gain.setCurrentAndTargetValue(newGain);
+}
+
 void Gain::process(const juce::dsp::ProcessContextReplacing<float>& context) noexcept
 {
     jassert(sampleRate != 0.0);

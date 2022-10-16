@@ -30,7 +30,7 @@ public:
     void renderNextBlock(juce::AudioBuffer<float>& outputBuffer, int startSample, int numSamples);
 
     // For SynthProcessor
-    inline bool isCurrentlyPlaying() const { return noteOn; }
+    inline bool isCurrentlyPlaying() { return !gain.isSilent(); }
     inline int getQueuePos() const { return queuePos; }
     inline int getMidiNoteNumber() const { return midiNoteNumber; }
 
