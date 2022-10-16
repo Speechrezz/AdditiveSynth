@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="MhLAbN" name="AdditiveSynth" projectType="audioplug" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" pluginCharacteristicsValue="pluginIsSynth,pluginWantsMidiIn">
+  <MAINGROUP id="NDbBN3" name="AdditiveSynth">
+    <GROUP id="{4ACE5062-F037-060F-2894-7B8238D0E52C}" name="Source">
+      <GROUP id="{6EB2F203-FAEF-9E4E-BBD6-6B12E9DEB97A}" name="Common">
+        <FILE id="TunD8z" name="Constants.h" compile="0" resource="0" file="Source/Common/Constants.h"/>
+        <FILE id="o2qPjo" name="RingBuffer.cpp" compile="1" resource="0" file="Source/Common/RingBuffer.cpp"/>
+        <FILE id="O4bnTm" name="RingBuffer.h" compile="0" resource="0" file="Source/Common/RingBuffer.h"/>
+        <FILE id="sgH0La" name="Utils.cpp" compile="1" resource="0" file="Source/Common/Utils.cpp"/>
+        <FILE id="pC3uoQ" name="Utils.h" compile="0" resource="0" file="Source/Common/Utils.h"/>
+      </GROUP>
+      <GROUP id="{F7BA34DB-9043-DEBF-6A93-A57717A8AE7D}" name="DSP">
+        <FILE id="CrvU9O" name="Gain.cpp" compile="1" resource="0" file="Source/DSP/Gain.cpp"/>
+        <FILE id="NO9Mq4" name="Gain.h" compile="0" resource="0" file="Source/DSP/Gain.h"/>
+        <FILE id="QWSZCl" name="SynthProcessor.cpp" compile="1" resource="0"
+              file="Source/DSP/SynthProcessor.cpp"/>
+        <FILE id="KnE7OZ" name="SynthProcessor.h" compile="0" resource="0"
+              file="Source/DSP/SynthProcessor.h"/>
+        <FILE id="cSwafy" name="SynthVoice.cpp" compile="1" resource="0" file="Source/DSP/SynthVoice.cpp"/>
+        <FILE id="rgpJj6" name="SynthVoice.h" compile="0" resource="0" file="Source/DSP/SynthVoice.h"/>
+        <FILE id="Spxip0" name="TestOsc.cpp" compile="1" resource="0" file="Source/DSP/TestOsc.cpp"/>
+        <FILE id="CHcyeF" name="TestOsc.h" compile="0" resource="0" file="Source/DSP/TestOsc.h"/>
+      </GROUP>
+      <GROUP id="{7AEE3AAC-B257-BD26-BBC7-CCEEED34D09D}" name="GUI">
+        <GROUP id="{DD951124-ECDD-D99C-43E8-932B0767AD84}" name="CustomLooks">
+          <FILE id="haHNBE" name="CustomLook.cpp" compile="1" resource="0" file="Source/GUI/CustomLooks/CustomLook.cpp"/>
+          <FILE id="thwJFQ" name="CustomLook.h" compile="0" resource="0" file="Source/GUI/CustomLooks/CustomLook.h"/>
+        </GROUP>
+        <GROUP id="{B5CCE2C2-83DB-FAFB-1279-A34DBB5851CD}" name="Utils">
+          <FILE id="V5m6CZ" name="FullSlider.cpp" compile="1" resource="0" file="Source/GUI/Utils/FullSlider.cpp"/>
+          <FILE id="v7uLFN" name="FullSlider.h" compile="0" resource="0" file="Source/GUI/Utils/FullSlider.h"/>
+          <FILE id="cujhnQ" name="GuiData.cpp" compile="1" resource="0" file="Source/GUI/Utils/GuiData.cpp"/>
+          <FILE id="AM2FQu" name="GuiData.h" compile="0" resource="0" file="Source/GUI/Utils/GuiData.h"/>
+        </GROUP>
+        <FILE id="EMp0YW" name="WindowLayout.cpp" compile="1" resource="0"
+              file="Source/GUI/WindowLayout.cpp"/>
+        <FILE id="ZZchWT" name="WindowLayout.h" compile="0" resource="0" file="Source/GUI/WindowLayout.h"/>
+      </GROUP>
+      <FILE id="HpArYD" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="dqEvjb" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="eDgcso" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="XtLDDg" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+    </GROUP>
+  </MAINGROUP>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
+  <EXPORTFORMATS>
+    <VS2022 targetFolder="Builds/VisualStudio2022">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="AdditiveSynth"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="AdditiveSynth"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../../modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../modules"/>
+        <MODULEPATH id="juce_core" path="../../modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../modules"/>
+        <MODULEPATH id="juce_dsp" path="../../modules"/>
+        <MODULEPATH id="juce_events" path="../../modules"/>
+        <MODULEPATH id="juce_graphics" path="../../modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../modules"/>
+      </MODULEPATHS>
+    </VS2022>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+</JUCERPROJECT>
