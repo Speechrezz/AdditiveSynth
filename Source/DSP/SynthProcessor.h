@@ -18,31 +18,6 @@ namespace xynth
 class SynthProcessor
 {
 public:
-    /*struct Note
-    {
-        bool operator==(const Note& other) const
-        {
-            return note == other.note; // && noteOn == other.noteOn;
-        }
-
-        bool operator!=(const Note& other) const
-        {
-            return !operator==(other);
-        }
-
-        void turnNoteOff()
-        {
-            note = 0;
-            noteOn = false;
-        }
-
-        int note = 0;
-        float velocity;
-        bool noteOn = false;
-
-        int queuePos = 0;
-    };*/
-
     SynthProcessor() = default;
     ~SynthProcessor() = default;
 
