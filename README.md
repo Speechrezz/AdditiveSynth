@@ -1,8 +1,7 @@
-# Le Phonk
+# Additive Synth
 
-Le Phonk is the only plugin you will ever need.
+Creating a basic additive synth
 
-![Screenshot](/Git/screenshot.png)
 
 ## License
 
